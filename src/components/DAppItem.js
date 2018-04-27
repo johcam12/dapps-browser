@@ -10,7 +10,7 @@ class DAppItem extends React.Component {
         return (
             <Media className="dappItem" tag="a" href={url}>
                 <Media className="mt-1 align media-block">
-                    <Media bottom>
+                    <Media left bottom tag="div">
                         <img src={item.image} alt="logo" className="media-logo" />
                     </Media>
                     <Media body>
