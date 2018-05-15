@@ -4,6 +4,7 @@ import {
     Link,
 } from 'react-router-dom'
 import DAppItems from "./DAppItems"
+import DAppTopCards from "./DAppTopCards"
 import { TrustClient } from "../network/TrustClient"
 import getWeb3 from '../utils/provider'
 
@@ -28,8 +29,20 @@ class DApps extends React.Component {
 
     render() {
         const elements = this.state.data || []
+       
+        const sliderElements = elements.filter(function(item){
+            if (item.category.name.toLowerCase() == "new dapps")
+            return item;
+        });
+        
         return (
             <div>
+                <div className="TopSlider">
+                    <h4>New DApps</h4>
+                    {sliderElements.map((element, index) => (
+                            <DAppTopCards key={element} items={element.results} />
+                    ))}
+                </div>
                 <div className="DApps">
                     {elements.map((element, index) => (
                         <div key={element.category._id}>
@@ -59,7 +72,7 @@ class Footer extends React.Component {
                         </center>
                         <center>
                             <Link className="contact-us-link" to="/contact-us">
-                                Contact Us
+                                Contact Us 
                             </Link>
                         </center>
                     </div>
