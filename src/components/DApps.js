@@ -13,18 +13,18 @@ class DApps extends React.Component {
     constructor(props) {
         super(props);
         this.state = { data: [] };
-        this.trustClient = new TrustClient()
+        this.trustClient = new TrustClient();
     }
 
     fetch() {
-        let network = parseInt(getWeb3().version.network, 10)
+        let network = parseInt(getWeb3().version.network, 10);
         this.trustClient.fetchBootstrap(network).then(response => {
             this.setState({ data: response.data.docs });
         });
     }
 
     componentWillMount() {
-        this.fetch()
+        this.fetch();
     }
 
     render() {
@@ -68,8 +68,9 @@ class Footer extends React.Component {
                     <hr />
                     <div className="footer">
                         <center>
-                            We do not control, or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and Play at your own Risk.
+                            We do not control or endorse the Dapps listed, simply provide them as a list of convenience for you. Please investigate and proceed at your own risk.
                         </center>
+                        <br />
                         <center>
                             <Link className="contact-us-link" to="/contact-us">
                                 Contact Us 
