@@ -214,12 +214,14 @@ a.media-left.media-bottom {
 .card-body-title {
   padding-top: 0px;
   font-size: 14px;
+  margin-bottom: 21px;
   text-align: center;
   color: #233240;
 }
 
 .card-body-description{
   margin: -20px 4px 4px 4px;
+  line-height: 14px;
   border-radius: 10px;
   text-align: center;
   font-size: 12px;
